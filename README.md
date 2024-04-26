@@ -1,1 +1,1 @@
-Aplication runs on port 8080. I also add postman package with predefine requests. To run test use comand 'mvn clean package'.
+The application runs on port 8080. I also added postman package with predefined requests, you can find it in resources package. To run the test use the command `mvn clean package`. Application uses an in-memory DB. If you want to connect go to the link http://localhost:8080/h2-console. Specify the url as: `jdbc:h2:mem:testdb` and `password` for the password.
