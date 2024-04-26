@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "fee20aef-9e6f-4f27-8fc5-ed4d9b3f5ac2",
+		"name": "clear Solution requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30091090"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"example@gmail.com\",\n    \"firstName\" : \"Bob\",\n    \"lastName\" : \"Bobson\",\n    \"birthDate\" : \"2000-12-10\",\n    \"address\" : \"Shevchenka 9\",\n    \"phoneNumber\" : \"1010101010\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "update all for user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"example1@gmail.com\",\n    \"firstName\": \"Bober1\",\n    \"lastName\": \"Bobson1\",\n    \"birthDate\": \"2000-12-09\",\n    \"address\": \"Shevchenka 91\",\n    \"phoneNumber\": \"1010101020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/update-all/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"update-all",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "minor update for user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Bober\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users/minor-update/1"
+			},
+			"response": []
+		},
+		{
+			"name": "delete user by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/users/delete/1"
+			},
+			"response": []
+		},
+		{
+			"name": "search by birth date range",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\" : \"1995-01-01\",\n    \"to\" : \"2000-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users/search"
+			},
+			"response": []
+		}
+	]
+}
